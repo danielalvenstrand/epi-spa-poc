@@ -1,0 +1,11 @@
+@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+@model EPI_POC.Models.Pages.PageTemplates.AngularPage
+
+<script>
+  (function () {
+    Window['CustomRoute'] =  "@ViewBag.url";
+    Window['BaseHref'] =  "@ViewBag.baseHref";
+  })();
+</script>
+<app-root></app-root>

@@ -1,0 +1,21 @@
+@using EPiServer.Framework.Web.Mvc.Html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/en/">
+  <title>Episerver SPA</title>
+</head>
+<body>
+  
+  @RenderBody()
+  @Html.RenderEPiServerQuickNavigator()
+  @Html.RequiredClientResources("Footer")
+  <script src="@Url.Content("~/dist/EPI-POC/main.js")"></script>
+  <script src="@Url.Content("~/dist/EPI-POC/polyfills.js")"></script>
+  <script src="@Url.Content("~/dist/EPI-POC/runtime.js")"></script>
+  <script src="@Url.Content("~/dist/EPI-POC/styles.js")"></script>
+  <script src="@Url.Content("~/dist/EPI-POC/vendor.js")"></script>
+</body>
+</html>
