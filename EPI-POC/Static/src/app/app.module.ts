@@ -11,7 +11,7 @@ import { TestpageModule } from './pages/testpage/testpage.module';
   ],
   imports: [
     BrowserModule,
-      AppRoutingModule,
+    AppRoutingModule,
     TestpageModule
   ],
   providers: [],

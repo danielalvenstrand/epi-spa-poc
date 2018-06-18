@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { App.InitRouteService } from './app.init-route.service';
+import { InitRouteService } from './app.init-route.service';
 
 describe('App.InitRouteService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [App.InitRouteService]
+      providers: [InitRouteService]
     });
   });
 
-  it('should be created', inject([App.InitRouteService], (service: App.InitRouteService) => {
+  it('should be created', inject([InitRouteService], (service: InitRouteService) => {
     expect(service).toBeTruthy();
   }));
 });
