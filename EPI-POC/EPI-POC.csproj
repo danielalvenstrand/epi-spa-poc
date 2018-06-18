@@ -316,7 +316,7 @@
     <Compile Include="Business\Rendering\TemplateCoordinator.cs" />
     <Compile Include="Business\ServiceLocatorDependencyResolver.cs" />
     <Compile Include="Business\UIDescriptors\ContainerPageUIDescriptor.cs" />
-    <Compile Include="Controllers\AngularPageController.cs" />
+    <Compile Include="Controllers\ControllerTemplates\AngularPageController.cs" />
     <Compile Include="Controllers\ContactBlockController.cs" />
     <Compile Include="Controllers\DefaultPageController.cs" />
     <Compile Include="Controllers\FindSearchPageController.cs" />
@@ -378,20 +378,20 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\app\app-routing.module.spec.ts" />
-    <TypeScriptCompile Include="src\app\app-routing.module.ts" />
-    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\app.component.ts" />
-    <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\pages\testpage\testpage.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\pages\testpage\testpage.component.ts" />
-    <TypeScriptCompile Include="src\app\pages\testpage\testpage.module.spec.ts" />
-    <TypeScriptCompile Include="src\app\pages\testpage\testpage.module.ts" />
-    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
-    <TypeScriptCompile Include="src\environments\environment.ts" />
-    <TypeScriptCompile Include="src\main.ts" />
-    <TypeScriptCompile Include="src\polyfills.ts" />
-    <TypeScriptCompile Include="src\test.ts" />
+    <TypeScriptCompile Include="Static\src\app\app-routing.module.spec.ts" />
+    <TypeScriptCompile Include="Static\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="Static\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="Static\src\app\app.component.ts" />
+    <TypeScriptCompile Include="Static\src\app\app.module.ts" />
+    <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.component.spec.ts" />
+    <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.component.ts" />
+    <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.module.spec.ts" />
+    <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.module.ts" />
+    <TypeScriptCompile Include="Static\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="Static\src\environments\environment.ts" />
+    <TypeScriptCompile Include="Static\src\main.ts" />
+    <TypeScriptCompile Include="Static\src\polyfills.ts" />
+    <TypeScriptCompile Include="Static\src\test.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientResources\Images\icons\layoutIcons24x24.png" />
@@ -431,14 +431,14 @@
     <Content Include="Resources\LanguageFiles\PropertyNames.xml" />
     <Content Include="Resources\LanguageFiles\Views.xml" />
     <Content Include="Resources\LanguageFiles\_ReadMe.txt" />
-    <Content Include="src\app\app.component.css" />
-    <Content Include="src\app\app.component.html" />
-    <Content Include="src\app\pages\testpage\testpage.component.css" />
-    <Content Include="src\app\pages\testpage\testpage.component.html" />
-    <Content Include="src\favicon.ico" />
-    <Content Include="src\index.html" />
-    <Content Include="src\karma.conf.js" />
-    <Content Include="src\styles.css" />
+    <Content Include="Static\src\app\app.component.css" />
+    <Content Include="Static\src\app\app.component.html" />
+    <Content Include="Static\src\app\pages\testpage\testpage.component.css" />
+    <Content Include="Static\src\app\pages\testpage\testpage.component.html" />
+    <Content Include="Static\src\favicon.ico" />
+    <Content Include="Static\src\index.html" />
+    <Content Include="Static\src\karma.conf.js" />
+    <Content Include="Static\src\styles.css" />
     <Content Include="Static\css\bootstrap-collapse.js" />
     <Content Include="Static\css\bootstrap-responsive.css" />
     <Content Include="Static\css\bootstrap.css" />
@@ -571,11 +571,11 @@
     <Content Include="Views\ContactBlock\Index.cshtml" />
     <Content Include="Views\ArticlePage\Index.cshtml" />
     <Content Include="Views\Shared\Layouts\_RootPOC.cshtml" />
-    <Content Include="src\assets\.gitkeep" />
-    <Content Include="src\browserslist" />
-    <Content Include="src\tsconfig.app.json" />
-    <Content Include="src\tsconfig.spec.json" />
-    <Content Include="src\tslint.json" />
+    <Content Include="Static\src\assets\.gitkeep" />
+    <Content Include="Static\src\browserslist" />
+    <Content Include="Static\src\tsconfig.app.json" />
+    <Content Include="Static\src\tsconfig.spec.json" />
+    <Content Include="Static\src\tslint.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
