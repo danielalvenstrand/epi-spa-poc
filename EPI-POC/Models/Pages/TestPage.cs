@@ -27,6 +27,13 @@ namespace EPI_POC.Models.Pages
                     GroupName = SystemTabNames.Content,
                     Order = 1)]
                 public virtual XhtmlString MainBody { get; set; }
-         
-    }
+
+        [Display(
+                Name = "Block area",
+                Description = "",
+                GroupName = SystemTabNames.Content,
+                Order = 70)]
+        public virtual ContentArea BlockArea { get; set; }
+
+  }
 }

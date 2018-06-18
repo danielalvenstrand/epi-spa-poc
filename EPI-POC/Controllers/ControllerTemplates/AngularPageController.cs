@@ -26,6 +26,7 @@ namespace EPI_POC.Controllers.ControllerTemplates
         var url = UrlResolver.Current.GetUrl(new UrlBuilder(currentPage.LinkURL), EPiServer.Web.ContextMode.Default);
         var baseHref = UrlResolver.Current.GetUrl(new UrlBuilder(startPage.LinkURL), EPiServer.Web.ContextMode.Default);
         ViewBag.url = url;
+        ViewBag.workid = currentPage.ContentLink.WorkID;
         ViewBag.baseHref = baseHref;
       }
       base.OnActionExecuting(filterContext);

@@ -1,6 +1,19 @@
-<p>
-  testpage works!
-</p>
-<h1 data-epi-property-name="Heading"
-data-epi-property-render="none"
-data-epi-property-edittype="floating">TEST</h1>
+<div>
+  <h1 data-epi-property-name="Heading"
+      data-epi-property-render="none"
+      data-epi-property-edittype="floating"
+      [innerHtml]="model.heading.value"
+      *ngIf="model && model.heading"></h1>
+  <p data-epi-property-name="MainBody"
+     data-epi-property-render="none"
+     data-epi-property-edittype="floating"
+     [innerHtml]="model.mainBody.value"
+     *ngIf="model && model.mainBody">
+  </p>
+  <div data-epi-property-name="BlockArea"
+       data-epi-property-render="none"
+       data-epi-property-edittype="floating">
+    <ng-template block-area-host></ng-template>
+    <ng-template block-area-host></ng-template>
+  </div>
+</div>
