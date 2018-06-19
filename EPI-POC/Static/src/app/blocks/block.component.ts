@@ -3,8 +3,8 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
 
 })
-export class BlockComponent {
+export abstract class BlockComponent {
 
-  @Input() data: any;
+  @Input() model: any;
 
 }

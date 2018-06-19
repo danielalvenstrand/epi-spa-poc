@@ -4,7 +4,7 @@ import { TestpageComponent } from './testpage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EpiserverService } from '../../shared/services/episerver.service';
 import { TestblockComponent } from '../../blocks/testblock/testblock.component';
-import { BlockAreaDirective } from '../../blocks/block-area.directive';
+import { BlockDirective } from '../../blocks/block.directive';
 
 @NgModule({
   imports: [
@@ -12,7 +12,7 @@ import { BlockAreaDirective } from '../../blocks/block-area.directive';
     HttpClientModule
   ],
   providers: [EpiserverService],
-  declarations: [TestpageComponent, BlockAreaDirective, TestblockComponent],
+  declarations: [TestpageComponent, BlockDirective, TestblockComponent],
   entryComponents: [TestblockComponent]
 })
 export class TestpageModule { }

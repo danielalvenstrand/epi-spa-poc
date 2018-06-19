@@ -12,8 +12,8 @@
   </p>
   <div data-epi-property-name="BlockArea"
        data-epi-property-render="none"
-       data-epi-property-edittype="floating">
-    <ng-template block-area-host></ng-template>
-    <ng-template block-area-host></ng-template>
+       data-epi-property-edittype="floating"
+       *ngIf="model && model.blockArea">
+    <ng-template block-host *ngFor="let block of model.blockArea.value"></ng-template>
   </div>
 </div>

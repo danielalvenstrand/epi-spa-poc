@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Subscription, interval, Observable, Observer } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export interface IEpiProperty {
   name: string;
   value: any;
 };
+
+const EPI_API_URI = '/api/episerver/v1.0/content/';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +17,8 @@ export class EpiserverService {
   epi: any;
   epiHook: Subscription;
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   init(): Promise<void> {
     return new Promise<void>((resolve, reject) => {
@@ -31,6 +35,13 @@ export class EpiserverService {
     })
   }
 
+  getContent<T>(id: number | string, workid?: string): Observable<T> {
+    const headers: HttpHeaders = new HttpHeaders({
+      'Accept-Language': 'en'
+    });
+    return this.httpClient.get<T>(EPI_API_URI + id + (workid ? '_' + workid : ''), { headers });
+  }
+
   contentSaved<T>(): Observable<T> {
     return new Observable<T>((observer: Observer<T>) => {
       if (this.epi.subscribe) {
@@ -41,7 +52,6 @@ export class EpiserverService {
               ...model, [property.name]: { value: property.value }
             };
           }, {});
-          updatedModel.blockArea = result.blockArea;
           observer.next(updatedModel);
         });
       } else {

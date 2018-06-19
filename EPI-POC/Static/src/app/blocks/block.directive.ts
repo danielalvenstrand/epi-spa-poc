@@ -1,9 +1,9 @@
 import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[block-area-host]'
+  selector: '[block-host]'
 })
-export class BlockAreaDirective {
+export class BlockDirective {
 
   constructor(public viewContainerRef: ViewContainerRef) { }
 

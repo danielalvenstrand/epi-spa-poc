@@ -428,13 +428,14 @@
     <TypeScriptCompile Include="Static\src\app\app.init-route.service.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\app.init-route.service.ts" />
     <TypeScriptCompile Include="Static\src\app\app.module.ts" />
-    <TypeScriptCompile Include="Static\src\app\blocks\block-area.directive.spec.ts" />
-    <TypeScriptCompile Include="Static\src\app\blocks\block-area.directive.ts" />
+    <TypeScriptCompile Include="Static\src\app\blocks\block.directive.spec.ts" />
+    <TypeScriptCompile Include="Static\src\app\blocks\block.directive.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\block-area.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\block.component.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\block.factory.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\testblock\testblock.component.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\testblock\testblock.component.ts" />
+    <TypeScriptCompile Include="Static\src\app\blocks\testblock\testblock.ts" />
     <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.ts" />
     <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.component.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.component.ts" />
