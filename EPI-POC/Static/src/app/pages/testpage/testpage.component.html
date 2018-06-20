@@ -14,6 +14,6 @@
        data-epi-property-render="none"
        data-epi-property-edittype="floating"
        *ngIf="model && model.blockArea">
-    <ng-template block-host *ngFor="let block of model.blockArea.value"></ng-template>
+    <ng-template block-host *ngFor="let block of model.blockArea.expandedValue"></ng-template>
   </div>
 </div>

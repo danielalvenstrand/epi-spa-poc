@@ -1,13 +1,16 @@
 import { TestblockComponent } from "./testblock/testblock.component";
 import { ComponentFactory } from "@angular/core";
 import { BlockComponent } from "./block.component";
+import { Block } from "./block";
+import { ImageblockComponent } from "./imageblock/imageblock.component";
 
 const BLOCK_ID = {
-  "TestBlock": TestblockComponent
+  "testblock": TestblockComponent,
+  "imagefile": ImageblockComponent
 };
 
 export class BlockFactory {
-  static getBlockComponent(blockType: string): BlockComponent | any {
+  static getBlockComponent(blockType: string): BlockComponent<Block> | any {
     return BLOCK_ID[blockType];
   }
 }

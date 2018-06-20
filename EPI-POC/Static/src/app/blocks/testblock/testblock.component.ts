@@ -5,9 +5,9 @@ import { Testblock } from './testblock';
 @Component({
   selector: 'app-testblock',
   templateUrl: './testblock.component.html',
-  styleUrls: ['./testblock.component.css']
+  styleUrls: ['./testblock.component.css'],
 })
-export class TestblockComponent extends BlockComponent implements OnInit {
+export class TestblockComponent extends BlockComponent<Testblock> implements OnInit {
 
   model: Testblock;
 

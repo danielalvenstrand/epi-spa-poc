@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { Block } from './block';
 
 @Component({
-
 })
-export abstract class BlockComponent {
+export abstract class BlockComponent<T extends Block> {
 
-  @Input() model: any;
+  @HostBinding('class.block') true;
+  @Input() model: T;
 
 }

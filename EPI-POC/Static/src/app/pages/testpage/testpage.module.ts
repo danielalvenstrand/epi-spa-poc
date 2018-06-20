@@ -5,14 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { EpiserverService } from '../../shared/services/episerver.service';
 import { TestblockComponent } from '../../blocks/testblock/testblock.component';
 import { BlockDirective } from '../../blocks/block.directive';
+import { ImageblockComponent } from '../../blocks/imageblock/imageblock.component';
+import { BlocksModule } from '../../blocks/blocks.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    BlocksModule
   ],
   providers: [EpiserverService],
-  declarations: [TestpageComponent, BlockDirective, TestblockComponent],
-  entryComponents: [TestblockComponent]
+  declarations: [TestpageComponent]
 })
 export class TestpageModule { }

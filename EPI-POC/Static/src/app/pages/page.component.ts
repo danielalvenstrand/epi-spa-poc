@@ -1,12 +1,13 @@
 import { ActivatedRoute } from "@angular/router";
 import { EpiserverService } from "../shared/services/episerver.service";
 import { Page } from './page';
-import { QueryList, ComponentFactoryResolver, Injector, AfterViewInit, ChangeDetectorRef, NgZone } from "@angular/core";
+import { QueryList, ComponentFactoryResolver, Injector, ChangeDetectorRef, NgZone, AfterViewInit } from "@angular/core";
 import { BlockDirective } from "../blocks/block.directive";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { BlockFactory } from "../blocks/block.factory";
 import { BlockComponent } from "../blocks/block.component";
 import { Observable } from "rxjs";
+import { Block } from "../blocks/block";
 
 export abstract class PageComponent<T extends Page> implements AfterViewInit {
   id: number;
@@ -27,23 +28,25 @@ export abstract class PageComponent<T extends Page> implements AfterViewInit {
     this.episerver.init().then(() => {
       this.episerver.contentSaved<T>()
         .subscribe((updatedModel: T) => {
-          const model = <T>{ ...(<Page>this.model), ...(<Page>updatedModel) };
-          console.log(model, this.model)
-          this.updateContent(model);
+          //const model = <T>{ ...(<Page>this.model), ...(<Page>updatedModel) };
+          this.updateContent(updatedModel);
         });
     });
-  }
 
-  ngAfterViewInit() {
     const workid = Window['WorkID'];
+
     this.episerver.getContent<T>(this.id, workid)
       .subscribe(
-      (result: T) => {
-        this.updateContent(result);
-        this.loadBlocks();
+        (result: T) => {
+          this.updateContent(result);
         },
         e => console.error(e)
       );
+  }
+
+  ngAfterViewInit() {
+    // Creates a microtask to inject the components when view is loaded.
+    this.blockArea.changes.subscribe(() => Promise.resolve(null).then(() => this.loadBlocks()));
   }
 
   updateContent(model: T): void {
@@ -51,27 +54,19 @@ export abstract class PageComponent<T extends Page> implements AfterViewInit {
   }
 
   loadBlocks() {
-    this.blockArea.changes.subscribe(() => {
-      this.blockArea.toArray().forEach((host: BlockDirective, index: number) => {
-        const contentLink = this.model.blockArea.value[index].contentLink;
-        const id = (typeof contentLink == "string" ? contentLink : contentLink.id);
-        this.episerver.getContent<any>(id)
-          .subscribe(
-            (result: any) => {
-              let componentFactory = this.componentFactoryResolver.resolveComponentFactory(
-                BlockFactory.getBlockComponent(result.contentType[1])
-              );
+    this.blockArea.toArray().forEach((host: BlockDirective, index: number) => {
+      const model: Block = this.model.blockArea.expandedValue[index];
 
-              let viewContainerRef = host.viewContainerRef;
-              viewContainerRef.clear();
+      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
+        BlockFactory.getBlockComponent(model.contentType[model.contentType.length -1].toLowerCase())
+        );
 
-              let componentRef = viewContainerRef.createComponent(componentFactory);
-              (<BlockComponent>componentRef.instance).model = result;
-            },
-            e => console.error(e)
-          );
+        const viewContainerRef = host.viewContainerRef;
+        viewContainerRef.clear();
+
+          const componentRef = viewContainerRef.createComponent(componentFactory);
+        (<BlockComponent<Block>>componentRef.instance).model = model;
       });
-    });
   }
 
 

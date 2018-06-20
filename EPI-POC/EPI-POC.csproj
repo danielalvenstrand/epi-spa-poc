@@ -436,6 +436,8 @@
     <TypeScriptCompile Include="Static\src\app\blocks\testblock\testblock.component.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\testblock\testblock.component.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\testblock\testblock.ts" />
+    <TypeScriptCompile Include="Static\src\app\pages\page.component.ts" />
+    <TypeScriptCompile Include="Static\src\app\pages\page.ts" />
     <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.ts" />
     <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.component.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.component.ts" />
