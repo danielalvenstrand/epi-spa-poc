@@ -9,11 +9,24 @@ import { BlockComponent } from "../blocks/block.component";
 import { Observable } from "rxjs";
 import { Block } from "../blocks/block";
 
+/**
+ * PageComponent is extended by every page component with the
+ * model T that in turn extends the Page model interface.
+ */
 export abstract class PageComponent<T extends Page> implements AfterViewInit {
   id: number;
   model: T;
   blockArea: QueryList<BlockDirective>;
 
+  /**
+   * The page id is extracted from the current route.
+   * Initializes the EpiserverService and subscribes to the contentSaved event.
+   * Uses the page id and work id to get content from the Content Delivery Api.
+   * @param route the current route.
+   * @param componentFactoryResolver used to resolve block components.
+   * @param zone used to fix changes in model by observables not triggering view updates.
+   * @param episerver the EpiserverService useds to fetch page and block models.
+   */
   constructor(
     private route: ActivatedRoute,
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -28,7 +41,6 @@ export abstract class PageComponent<T extends Page> implements AfterViewInit {
     this.episerver.init().then(() => {
       this.episerver.contentSaved<T>()
         .subscribe((updatedModel: T) => {
-          //const model = <T>{ ...(<Page>this.model), ...(<Page>updatedModel) };
           this.updateContent(updatedModel);
         });
     });
@@ -44,16 +56,25 @@ export abstract class PageComponent<T extends Page> implements AfterViewInit {
       );
   }
 
+  /** Creates a microtask to inject the components when view is loaded. */
   ngAfterViewInit() {
-    // Creates a microtask to inject the components when view is loaded.
     this.blockArea.changes.subscribe(() => Promise.resolve(null).then(() => this.loadBlocks()));
   }
 
+  /**
+   * Updates the model inside Angular zone to trigger change detection.
+   * @param model the new model provided.
+   */
   updateContent(model: T): void {
     this.zone.run(() => this.model = model);
   }
 
-  loadBlocks() {
+  /**
+   * Iterates over each block in the block area
+   * and resolves each block host as a block component
+   * using the block factory.
+   */
+  loadBlocks(): void {
     this.blockArea.toArray().forEach((host: BlockDirective, index: number) => {
       const model: Block = this.model.blockArea.expandedValue[index];
 
