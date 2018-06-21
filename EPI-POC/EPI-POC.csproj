@@ -433,6 +433,12 @@
     <TypeScriptCompile Include="Static\src\app\blocks\block-area.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\block.component.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\block.factory.ts" />
+    <TypeScriptCompile Include="Static\src\app\blocks\block.ts" />
+    <TypeScriptCompile Include="Static\src\app\blocks\blocks.module.spec.ts" />
+    <TypeScriptCompile Include="Static\src\app\blocks\blocks.module.ts" />
+    <TypeScriptCompile Include="Static\src\app\blocks\imageblock\imageblock.component.spec.ts" />
+    <TypeScriptCompile Include="Static\src\app\blocks\imageblock\imageblock.component.ts" />
+    <TypeScriptCompile Include="Static\src\app\blocks\imageblock\imageblock.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\testblock\testblock.component.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\testblock\testblock.component.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\testblock\testblock.ts" />
@@ -443,6 +449,7 @@
     <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.component.ts" />
     <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.module.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage.module.ts" />
+    <TypeScriptCompile Include="Static\src\app\shared\hierarchy-tracked.ts" />
     <TypeScriptCompile Include="Static\src\app\shared\services\episerver.service.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\shared\services\episerver.service.ts" />
     <TypeScriptCompile Include="Static\src\environments\environment.prod.ts" />
@@ -493,6 +500,8 @@
     <Content Include="Resources\LanguageFiles\_ReadMe.txt" />
     <Content Include="Static\src\app\app.component.css" />
     <Content Include="Static\src\app\app.component.html" />
+    <Content Include="Static\src\app\blocks\imageblock\imageblock.component.css" />
+    <Content Include="Static\src\app\blocks\imageblock\imageblock.component.html" />
     <Content Include="Static\src\app\blocks\testblock\testblock.component.css" />
     <Content Include="Static\src\app\blocks\testblock\testblock.component.html" />
     <Content Include="Static\src\app\pages\testpage\testpage.component.css" />
