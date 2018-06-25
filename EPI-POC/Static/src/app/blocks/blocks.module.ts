@@ -1,26 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlockDirective } from './block.directive';
-import { TestblockComponent } from './testblock/testblock.component';
 import { ImageblockComponent } from './imageblock/imageblock.component';
+import { TestblockComponent } from './testblock/testblock.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   exports: [
-    BlockDirective,
-    TestblockComponent,
-    ImageblockComponent
+    ImageblockComponent,
+    TestblockComponent
   ],
   declarations: [
-    BlockDirective,
-    TestblockComponent,
-
-    ImageblockComponent],
+    ImageblockComponent,
+    TestblockComponent
+  ],
   entryComponents: [
-    TestblockComponent,
-    ImageblockComponent
+    ImageblockComponent,
+    TestblockComponent
   ]
 })
 export class BlocksModule { }

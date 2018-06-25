@@ -1,5 +1,4 @@
-import { BlockArea } from "../../blocks/block-area";
-import { Page } from "../page";
+import { Page, BlockArea } from "../../shared/episerver";
 
 export interface Testpage extends Page {
   heading: { value: string };

@@ -1,4 +1,4 @@
-import { Block } from "../block";
+import { Block } from "../../shared/episerver";
 
 export interface Imageblock extends Block {
   name: string;

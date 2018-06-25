@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { InitRouteService } from './app.init-route.service';
 
 /**
  * AppComponent uses the InitRouteService to
@@ -12,12 +11,7 @@ import { InitRouteService } from './app.init-route.service';
 })
 export class AppComponent {
 
-  /**
-   * Injects the initRoute in order to navigate to provided route.
-   * @param initRoute used to navigate to provided route on app launch.
-   */
-  constructor(initRoute: InitRouteService) {
-    initRoute.init();
+  constructor() {
   }
 
 }

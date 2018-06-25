@@ -4,12 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpResponse } from 'selenium-webdriver/http';
 import { ActivatedRoute } from '@angular/router';
 import { Testpage } from './testpage';
-import { EpiserverService } from '../../shared/services/episerver.service';
-import { BlockDirective } from '../../blocks/block.directive';
-import { BlockFactory } from '../../blocks/block.factory';
-import { BlockComponent } from '../../blocks/block.component';
-import { BlockArea } from '../../blocks/block-area';
-import { PageComponent } from '../page.component';
+import { PageComponent, BlockDirective, EpiserverService } from '../../shared/episerver';
 
 @Component({
   selector: 'app-testpage',

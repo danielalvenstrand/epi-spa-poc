@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { TestpageComponent } from './pages/testpage/testpage.component';
+import { InitRoute } from './shared/episerver';
 
 /**
  * Every route has to have the same URI as the page in Episerver.
@@ -14,4 +15,13 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule extends InitRoute {
+
+  /**
+   * Injects the router in order to navigate to init route.
+   * @param router used to navigate to provided route on app launch.
+   */
+  constructor(router: Router) {
+    super(router);
+  }
+}

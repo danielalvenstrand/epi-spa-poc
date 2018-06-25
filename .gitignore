@@ -113,3 +113,5 @@ yarn-error.log
 /modules/rollup-test/dist/
 
 **/dist/
+
+!**/modules/**/*.zip

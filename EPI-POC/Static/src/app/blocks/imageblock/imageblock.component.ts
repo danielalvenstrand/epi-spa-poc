@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockComponent, BlockIdentifier } from '../block.component';
 import { Imageblock } from './imageblock';
-import hierarchyTracked from '../../shared/hierarchy-tracked';
+import { BlockComponent, BlockDecorator } from '../../shared/episerver';
 
 @Component({
   selector: 'app-imageblock',
   templateUrl: './imageblock.component.html',
   styleUrls: ['./imageblock.component.css']
 })
-@hierarchyTracked export class ImageblockComponent extends BlockComponent<Imageblock> implements BlockIdentifier, OnInit {
+@BlockDecorator({
+  blockIdentifier: 'imagefile'
+})
+export class ImageblockComponent extends BlockComponent<Imageblock> implements OnInit {
 
-  _block_identifier = "imagefile";
   model: Imageblock;
 
   constructor() {
