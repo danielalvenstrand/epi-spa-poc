@@ -358,6 +358,8 @@
     <Compile Include="Business\Rendering\TemplateCoordinator.cs" />
     <Compile Include="Business\ServiceLocatorDependencyResolver.cs" />
     <Compile Include="Business\UIDescriptors\ContainerPageUIDescriptor.cs" />
+    <Compile Include="Controllers\TestBlockController.cs" />
+    <Compile Include="Controllers\ControllerTemplates\AngularBlockController.cs" />
     <Compile Include="Controllers\ControllerTemplates\AngularPageController.cs" />
     <Compile Include="Controllers\ContactBlockController.cs" />
     <Compile Include="Controllers\DefaultPageController.cs" />
@@ -377,6 +379,7 @@
     <Compile Include="Helpers\CategorizableExtensions.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\UrlHelpers.cs" />
+    <Compile Include="Models\Blocks\BlockTemplates\AngularBlock.cs" />
     <Compile Include="Models\Blocks\ButtonBlock.cs" />
     <Compile Include="Models\Blocks\ContactBlock.cs" />
     <Compile Include="Models\Blocks\TestBlock.cs" />
@@ -425,8 +428,7 @@
     <TypeScriptCompile Include="Static\src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="Static\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\app.component.ts" />
-    <TypeScriptCompile Include="Static\src\app\app.init-route.service.spec.ts" />
-    <TypeScriptCompile Include="Static\src\app\app.init-route.service.ts" />
+    <TypeScriptCompile Include="Static\src\app\shared\episerver\init-route.ts" />
     <TypeScriptCompile Include="Static\src\app\app.module.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\blocks.module.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\blocks.module.ts" />
@@ -658,6 +660,8 @@
     <Content Include="tslint.json" />
     <Content Include="Views\Shared\AngularPage.cshtml" />
     <Content Include="Views\TestPage\Index.cshtml" />
+    <Content Include="Views\TestBlock\Index.cshtml" />
+    <Content Include="Views\Shared\AngularBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

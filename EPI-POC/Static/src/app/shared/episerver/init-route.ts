@@ -17,6 +17,7 @@ export abstract class InitRoute {
    * and navigates to that URI.
    */
   init(): void {
+    console.log(window['CustomRoute'])
     const cRoute: string = window['CustomRoute'];
     if (cRoute) {
       let routeArray = cRoute.split('/');

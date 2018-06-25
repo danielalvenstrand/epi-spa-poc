@@ -7,7 +7,7 @@ using EPiServer.DataAnnotations;
 namespace EPI_POC.Models.Blocks
 {
   [ContentType(DisplayName = "TestBlock", GUID = "ea5c4f98-9d99-4f5b-9ade-f167ca4fa169", Description = "")]
-  public class TestBlock : BlockData
+  public class TestBlock : AngularBlock
   {
     
             [CultureSpecific]
