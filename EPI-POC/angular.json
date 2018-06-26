@@ -14,6 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/EPI-POC",
+            "deployUrl": "/dist/EPI-POC/",
             "index": "Static/src/index.html",
             "main": "Static/src/main.ts",
             "polyfills": "Static/src/polyfills.ts",
@@ -50,7 +51,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "EPI-POC:build"
+            "browserTarget": "EPI-POC:build:local"
           },
           "configurations": {
             "production": {

@@ -1,3 +1,6 @@
-<p *ngIf="model && model.name">
+<p data-epi-property-name="Name"
+   data-epi-property-render="none"
+   data-epi-property-edittype="floating"
+   *ngIf="model && model.name">
   {{model.name.value}}
 </p>

@@ -79,7 +79,7 @@ export abstract class PageComponent<T extends Page> implements AfterViewInit {
       const model: Block = this.model.blockArea.expandedValue[index];
 
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
-        BlockFactory.getBlockComponent(model.contentType[model.contentType.length -1].toLowerCase())
+        BlockFactory.getBlockComponent(model.contentType[model.contentType.length -1])
         );
 
         const viewContainerRef = host.viewContainerRef;

@@ -6,10 +6,12 @@ import { TestblockComponent } from '../../blocks/testblock/testblock.component';
 import { ImageblockComponent } from '../../blocks/imageblock/imageblock.component';
 import { EpiserverModule } from '../../shared/episerver';
 import { BlocksModule } from '../../blocks/blocks.module';
+import { TestpageRoutingModule } from './testpage-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    TestpageRoutingModule,
     HttpClientModule,
     EpiserverModule,
     BlocksModule

@@ -23,6 +23,8 @@ namespace EPI_POC.Controllers.ControllerTemplates
       {
         var currentBlock = currentBlockObject as AngularBlock;
         ViewBag.blockType = (currentBlock as IContent).GetOriginalType().Name;
+        ViewBag.blockId = (currentBlock as IContent).ContentLink.ID;
+        ViewBag.blockWorkId = (currentBlock as IContent).ContentLink.WorkID;
       }
       base.OnActionExecuting(filterContext);
     }

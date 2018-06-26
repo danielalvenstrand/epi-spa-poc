@@ -428,6 +428,12 @@
     <TypeScriptCompile Include="Static\src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="Static\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="Static\src\app\app.component.ts" />
+    <TypeScriptCompile Include="Static\src\app\core\core.module.spec.ts" />
+    <TypeScriptCompile Include="Static\src\app\core\core.module.ts" />
+    <TypeScriptCompile Include="Static\src\app\core\root-container\root-container.component.spec.ts" />
+    <TypeScriptCompile Include="Static\src\app\core\root-container\root-container.component.ts" />
+    <TypeScriptCompile Include="Static\src\app\pages\testpage\testpage-routing.module.ts" />
+    <TypeScriptCompile Include="Static\src\app\shared\episerver\block\block-view.component.ts" />
     <TypeScriptCompile Include="Static\src\app\shared\episerver\init-route.ts" />
     <TypeScriptCompile Include="Static\src\app\app.module.ts" />
     <TypeScriptCompile Include="Static\src\app\blocks\blocks.module.spec.ts" />
@@ -511,6 +517,8 @@
     <Content Include="Static\src\app\blocks\imageblock\imageblock.component.html" />
     <Content Include="Static\src\app\blocks\testblock\testblock.component.css" />
     <Content Include="Static\src\app\blocks\testblock\testblock.component.html" />
+    <Content Include="Static\src\app\core\root-container\root-container.component.css" />
+    <Content Include="Static\src\app\core\root-container\root-container.component.html" />
     <Content Include="Static\src\app\pages\testpage\testpage.component.css" />
     <Content Include="Static\src\app\pages\testpage\testpage.component.html" />
     <Content Include="Static\src\favicon.ico" />

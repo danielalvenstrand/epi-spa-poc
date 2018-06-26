@@ -15,7 +15,7 @@ export class BlockFactory {
    */
   static getBlockComponent(blockType: string): BlockComponent<Block> | any {
     if (BlockComponent.extendedBy) 
-      return BlockComponent.extendedBy.find(block => (<BlockDescription>block['description']).blockIdentifier == blockType);
+      return BlockComponent.extendedBy.find(block => (<BlockDescription>block['description']).blockIdentifier == blockType.toLowerCase());
     else return null;
   }
 }

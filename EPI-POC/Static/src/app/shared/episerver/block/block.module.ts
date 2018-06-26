@@ -2,16 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlockDirective } from './block.directive';
 import { BlockComponent } from './block.component';
+import { BlockViewComponent } from './block-view.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
-    BlockDirective
+    BlockDirective,
+    BlockViewComponent
   ],
   declarations: [
-    BlockDirective
+    BlockDirective,
+    BlockViewComponent
+  ],
+  entryComponents: [
+    BlockViewComponent
   ]
 })
 export class BlockModule { }

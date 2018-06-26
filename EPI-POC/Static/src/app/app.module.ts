@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { TestpageModule } from './pages/testpage/testpage.module';
+import { AppRoutingModule } from './app-routing.module'
+import { BlocksModule } from './blocks/blocks.module';
+import { CoreModule } from './core/core.module';
+import { BlockModule } from './shared/episerver';
 
 @NgModule({
   declarations: [
@@ -11,8 +13,10 @@ import { TestpageModule } from './pages/testpage/testpage.module';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     AppRoutingModule,
-    TestpageModule
+    BlockModule,
+    BlocksModule
   ],
   providers: [],
   bootstrap: [AppComponent]

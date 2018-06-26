@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BLOCK_VIEW_PATH } from './block/block-view.component';
 
 /** InitRoute navigates to the provided route from Episerver. */
 export abstract class InitRoute {
@@ -21,9 +22,13 @@ export abstract class InitRoute {
     const cRoute: string = window['CustomRoute'];
     if (cRoute) {
       let routeArray = cRoute.split('/');
-      routeArray = routeArray.filter((val, index) => [0, 1, routeArray.length - 1].indexOf(index) === -1);
+      if (cRoute.includes(BLOCK_VIEW_PATH)) {
+        routeArray = routeArray.filter((val, index) => [0, routeArray.length - 1].indexOf(index) === -1);
+      } else {
+        routeArray = routeArray.filter((val, index) => [0, 1, routeArray.length - 1].indexOf(index) === -1);
+      }
       const route = routeArray.join('/');
-      console.log(route, routeArray);
+     
       this.router.navigateByUrl(route);
     }
   }

@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
-import { TestpageComponent } from './pages/testpage/testpage.component';
-import { InitRoute } from './shared/episerver';
+import { InitRoute, BlockViewRoute } from './shared/episerver';
+import { RootContainerComponent } from './core/root-container/root-container.component';
 
 /**
  * Every route has to have the same URI as the page in Episerver.
  * Each route also has to have the page id from Episerver.
  */
 const routes: Routes = [
-  { path: 'test', component: TestpageComponent, data: { id: 117 } }
+  { path: '', component: RootContainerComponent, children: [
+    { path: 'test', loadChildren: './pages/testpage/testpage.module#TestpageModule' },
+  ]},
+  BlockViewRoute
 ];
 
 @NgModule({
