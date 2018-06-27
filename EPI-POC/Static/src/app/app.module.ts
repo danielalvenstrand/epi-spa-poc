@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module'
 import { BlocksModule } from './blocks/blocks.module';
 import { CoreModule } from './core/core.module';
-import { BlockModule } from './shared/episerver';
+import { EpiserverModule } from './shared/episerver';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { BlockModule } from './shared/episerver';
     BrowserModule,
     CoreModule,
     AppRoutingModule,
-    BlockModule,
+    EpiserverModule,
     BlocksModule
   ],
   providers: [],

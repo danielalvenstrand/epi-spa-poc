@@ -1,4 +1,11 @@
 @using EPI_POC
 @model PageViewModel<EPI_POC.Models.Pages.StartPage>
 
+<script>
+  (function () {
+    window['CustomRoute'] =  "@ViewBag.url";
+    window['WorkID'] =  "@ViewBag.workid";
+    window['BaseHref'] =  "@ViewBag.baseHref";
+  })();
+</script>
 <app-root></app-root>

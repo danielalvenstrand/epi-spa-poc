@@ -78,5 +78,5 @@ export class BlockViewComponent {
 export const BLOCK_VIEW_PATH = 'block-view';
 
 export const BlockViewRoute = {
-  path: 'block-view', component: BlockViewComponent
+  path: BLOCK_VIEW_PATH, component: BlockViewComponent
 }

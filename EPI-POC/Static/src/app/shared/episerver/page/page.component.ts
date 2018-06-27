@@ -37,7 +37,6 @@ export abstract class PageComponent<T extends Page> implements AfterViewInit {
       data => this.id = data.id,
       e => console.error(e)
     );
-    
     this.episerver.init().then(() => {
       this.episerver.contentSaved<T>()
         .subscribe((updatedModel: T) => {
@@ -58,7 +57,7 @@ export abstract class PageComponent<T extends Page> implements AfterViewInit {
 
   /** Creates a microtask to inject the components when view is loaded. */
   ngAfterViewInit() {
-    this.blockArea.changes.subscribe(() => Promise.resolve(null).then(() => this.loadBlocks()));
+    this.blockArea && this.blockArea.changes.subscribe(() => Promise.resolve(null).then(() => this.loadBlocks()));
   }
 
   /**

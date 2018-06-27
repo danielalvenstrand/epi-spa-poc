@@ -71,9 +71,7 @@ export class EpiserverService {
             observer.next(result);
           })
         },
-        error => console.error(error));
-      } else {
-        observer.error("Not in edit mode!");
+          error => console.error(error));
       };
     });
   }

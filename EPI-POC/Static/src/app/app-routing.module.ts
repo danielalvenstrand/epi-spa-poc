@@ -9,6 +9,7 @@ import { RootContainerComponent } from './core/root-container/root-container.com
  */
 const routes: Routes = [
   { path: '', component: RootContainerComponent, children: [
+    { path: '', loadChildren: './pages/startpage/startpage.module#StartpageModule' },
     { path: 'test', loadChildren: './pages/testpage/testpage.module#TestpageModule' },
   ]},
   BlockViewRoute

@@ -1,8 +1,12 @@
 using System.Web.Mvc;
 using EPI_POC.Models.Pages;
 using EPI_POC.Models.ViewModels;
+using EPiServer;
+using EPiServer.Core;
+using EPiServer.ServiceLocation;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
+using EPiServer.Web.Routing;
 
 namespace EPI_POC.Controllers
 {
@@ -23,7 +27,15 @@ namespace EPI_POC.Controllers
                 editHints.AddConnection(m => m.Layout.CustomerZonePages, p => p.CustomerZonePageLinks);
             }
 
-            return View(model);
+            var contentLoader = ServiceLocator.Current.GetInstance<IContentLoader>();
+            var startPage = contentLoader.Get<StartPage>(ContentReference.StartPage);
+            var url = UrlResolver.Current.GetUrl(new UrlBuilder(currentPage.LinkURL), EPiServer.Web.ContextMode.Default);
+            var baseHref = UrlResolver.Current.GetUrl(new UrlBuilder(startPage.LinkURL), EPiServer.Web.ContextMode.Default);
+            ViewBag.url = url;
+            ViewBag.workid = currentPage.ContentLink.WorkID;
+            ViewBag.baseHref = baseHref;
+
+      return View(model);
         }
 
     }
